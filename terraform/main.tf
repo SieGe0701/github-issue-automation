@@ -9,7 +9,7 @@ provider "github" {
 
 resource "github_issue" "automated_issue" {
   repository = "issue_poc_check"   # Replace with your repository name
-  title      = var.title
+  title      = local.config_data["github"]["title"]
 
   body = <<EOT
 ### repo_name
