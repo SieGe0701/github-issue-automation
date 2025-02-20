@@ -3,8 +3,3 @@ variable "github_token" {
   type        = string
   sensitive   = true
 }
-
-variable "title" {
-  description = "title for the issue"
-  type = string
-}
