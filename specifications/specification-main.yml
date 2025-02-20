@@ -1,0 +1,44 @@
+github:
+  title: New repo - travel-poc.<product_name>.[<optional_domain_name>].<repo_name>
+  repo_name: super-fast-microservice
+  description: Super fast microservice creation using terraform
+  visibility: internal/private
+  product:  Travel
+  repo_template: travel.api-repo-template
+  pci_dss: YES/NO
+  github_group: xyz
+  permission: admin
+
+microservices:
+  project: Maven/Gradle
+  language: Java
+  framework: skube
+  name: super-fast-microservice
+  description: Super fast microservice creation using terraform
+  dependencies:
+    - web
+    - Security
+    - JPA
+    - Actuator
+
+  project_metadata:
+    groupId: com.superfast
+    artifactId: super-fast-microservice
+    version: 1.0.0
+    package_name: com.superfast.microservice
+    packaging: jar(docker image)
+    description: Super fast microservice creation using terraform
+    java_version: 17
+
+  resources:
+    requests:
+      memory: 2G
+      cpu: 1
+      pod: 1
+
+    limits:
+      memory: 4G
+      cpu: 4
+      pod: 5
+
+

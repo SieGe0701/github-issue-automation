@@ -1,5 +1,5 @@
 locals {
-  config_data = yamldecode(file("../specifications/config.yml"))
+  config_data = yamldecode(file("../specifications/specification-main.yml"))
 }
 
 
@@ -12,13 +12,29 @@ resource "github_issue" "automated_issue" {
   title      = var.title
 
   body = <<EOT
-### Input A
-${local.config_data["A"]["input_a"]}
+### repo_name
+${local.config_data["github"]["repo_name"]}
 
-### Input B
-${local.config_data["A"]["input_b"]}
+### description
+${local.config_data["github"]["description"]}
 
-### Input C
-${local.config_data["A"]["input_c"]}
+### visibility
+${local.config_data["github"]["visibility"]}
+
+### product
+${local.config_data["github"]["product"]}
+
+### repo_template
+${local.config_data["github"]["repo_template"]}
+
+### pci_dss
+${local.config_data["github"]["pci_dss"]}
+
+### github_group
+${local.config_data["github"]["github_group"]}
+
+### permission
+${local.config_data["github"]["permission"]}
+
 EOT
 }
